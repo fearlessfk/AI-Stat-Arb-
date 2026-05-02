@@ -1,0 +1,44 @@
+[
+  {
+    "id": "run-1777442377706",
+    "createdAt": "2026-04-29T05:59:37.706Z",
+    "strategyName": "二次验证策略",
+    "market": "A股",
+    "frequency": "日频",
+    "style": "多因子",
+    "verdict": "目前可以先收集相关样本，但暂时还不建议进入真实回测准备阶段。",
+    "action": "继续补充策略定义",
+    "topCandidate": "动量轮动因子组合",
+    "topScore": 76,
+    "searchProvider": "Mock Fallback",
+    "llmModel": "local-fallback"
+  },
+  {
+    "id": "run-1777442359118",
+    "createdAt": "2026-04-29T05:59:19.118Z",
+    "strategyName": "测试策略",
+    "market": "A股",
+    "frequency": "日频",
+    "style": "多因子",
+    "verdict": "目前可以先收集相关样本，但暂时还不建议进入真实回测准备阶段。",
+    "action": "继续补充策略定义",
+    "topCandidate": "动量轮动因子组合",
+    "topScore": 76,
+    "searchProvider": "Mock Fallback",
+    "llmModel": "local-fallback"
+  },
+  {
+    "id": "run-1777442307329",
+    "createdAt": "2026-04-29T05:58:27.329Z",
+    "strategyName": "????",
+    "market": "A?",
+    "frequency": "??",
+    "style": "???",
+    "verdict": "当前没有足够接近的公开策略样本，说明你的描述可能过于抽象或偏原创。",
+    "action": "先完善字段，再继续检索",
+    "topCandidate": "",
+    "topScore": 0,
+    "searchProvider": "Mock Fallback",
+    "llmModel": "local-fallback"
+  }
+]

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 驱动的加密资产长尾协整套利投研平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Stat-Arb Research Platform</p>
+        <h1>让长尾加密配对交易，从论文线索到盲测复盘形成闭环</h1>
+        <p class="hero-text">
+          这是一个基于多 Agent 协作的量化策略猎头与回测评估系统，聚焦 Top 50-500 中小市值代币的配对交易。
+          平台自动完成前沿研究检索、可行性盲审、策略代码转化与样本外归因复盘，尽量把人力留给真正值得投入的 Alpha 假设。
+        </p>
+        <div class="hero-badges">
+          <span>长上下文论文解析</span>
+          <span>向量化策略生成</span>
+          <span>Walk-forward 盲测归因</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="metric">
+          <span>当前展示阶段</span>
+          <strong>多 Agent 研究准入台</strong>
+        </div>
+        <div class="metric">
+          <span>目标市场</span>
+          <strong>Crypto Long-tail Pairs</strong>
+        </div>
+        <div class="metric">
+          <span>效率杠杆</span>
+          <strong>1-2 周压缩到约 2 小时</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel overview-panel">
+        <div class="section-title">
+          <h2>核心痛点</h2>
+          <p>平台不是单纯找策略，而是专门解决统计套利投研里最昂贵、最容易过拟合的三段工作。</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <h3>策略情报处理过载</h3>
+            <p>持续扫描 arXiv、SSRN、GitHub 等来源，由模型抽取数学结构、依赖因子与前置假设。</p>
+          </article>
+          <article class="story-card">
+            <h3>长尾协整维度爆炸</h3>
+            <p>在中小市值代币池中滚动筛选协整对，并给出价差驱动与 Narrative Driver 的可解释线索。</p>
+          </article>
+          <article class="story-card">
+            <h3>样本内漂亮、样本外塌方</h3>
+            <p>用自动化盲审与 Walk-forward 验证降低未来函数、生存者偏差和情绪化过拟合。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel pipeline-panel">
+        <div class="section-title">
+          <h2>四阶段 Agent Pipeline</h2>
+          <p>前台当前重点展示的是策略准入和解释层，但整体设计已经按四阶段闭环组织。</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <h3>Agent 1: Discovery Scraper</h3>
+            <p>检索最新统计套利研究，提取公式、特征、假设和适用场景。</p>
+          </article>
+          <article class="story-card">
+            <h3>Agent 2: Feasibility Grader</h3>
+            <p>结合手续费、延迟、数据可得性做逻辑盲审，提前拦截无法落地的方案。</p>
+          </article>
+          <article class="story-card">
+            <h3>Agent 3: Code Translator</h3>
+            <p>把策略研报翻译成符合 BaseStrategy 约束的向量化 Python 代码。</p>
+          </article>
+          <article class="story-card">
+            <h3>Agent 4: Post-mortem Analyst</h3>
+            <p>读取万行回测日志，识别失效归因并沉淀成可追踪的失败知识库。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel input-panel">
+        <div class="section-title">
+          <h2>策略输入</h2>
+          <p>输入一段关于长尾协整套利的假设，平台会先拆解研究要素，再生成候选样本、证据和准入建议。</p>
+        </div>
+
+        <div id="run-status" class="status-banner" data-tone="neutral"></div>
+
+        <form id="strategy-form">
+          <label for="strategy-name">策略名称</label>
+          <input id="strategy-name" name="strategyName" type="text" placeholder="例如：资金费率分层下的长尾代币配对均值回复">
+
+          <label for="strategy-summary">策略摘要</label>
+          <textarea
+            id="strategy-summary"
+            name="strategySummary"
+            rows="8"
+            placeholder="例如：在 Top 50-500 代币中先做滚动协整筛选，再结合价差 z-score、资金费率分化、orderbook 深度和叙事因子过滤，避免 Rug Pull 与流动性蒸发导致的伪协整。"
+          ></textarea>
+
+          <div class="tag-grid">
+            <label>
+              <span>市场</span>
+              <select id="market-select" name="market">
+                <option value="加密长尾现货">加密长尾现货</option>
+                <option value="加密永续合约">加密永续合约</option>
+                <option value="跨现货-永续">跨现货-永续</option>
+              </select>
+            </label>
+
+            <label>
+              <span>频率</span>
+              <select id="frequency-select" name="frequency">
+                <option value="1h">1h</option>
+                <option value="4h">4h</option>
+                <option value="15m">15m</option>
+              </select>
+            </label>
+
+            <label>
+              <span>策略风格</span>
+              <select id="style-select" name="style">
+                <option value="协整配对">协整配对</option>
+                <option value="统计套利">统计套利</option>
+                <option value="资金费率增强">资金费率增强</option>
+                <option value="事件风险规避">事件风险规避</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit" class="primary-button">生成研究准入报告</button>
+        </form>
+      </section>
+
+      <section class="panel source-panel">
+        <div class="section-title">
+          <h2>研究情报源</h2>
+          <p>这一层对应 Agent 1 的输入来源。原型当前可接外部搜索，也能回退到本地研究样本模式。</p>
+        </div>
+        <div class="source-list">
+          <article>
+            <h3>学术研究</h3>
+            <p>arXiv, SSRN, NBER, working paper, 统计套利与微观结构论文</p>
+          </article>
+          <article>
+            <h3>开源社区</h3>
+            <p>GitHub, Medium, Substack, Reddit, X, 开发者论坛</p>
+          </article>
+          <article>
+            <h3>交易执行语境</h3>
+            <p>交易所 API、Maker/Taker 费率、资金费率、订单簿深度、流动性约束</p>
+          </article>
+        </div>
+        <div id="provider-output" class="provider-box"></div>
+      </section>
+
+      <section class="panel analysis-panel">
+        <div class="section-title">
+          <h2>策略拆解结果</h2>
+          <p>把自然语言转换成结构化研究对象，供后续检索、逻辑盲审与代码转化使用。</p>
+        </div>
+        <div id="analysis-output"></div>
+      </section>
+
+      <section class="panel results-panel">
+        <div class="section-title">
+          <h2>候选研究样本</h2>
+          <p>展示与输入策略最接近的协整套利框架，并按综合准入评分排序。</p>
+        </div>
+        <div id="results" class="results-grid"></div>
+      </section>
+
+      <section class="panel decision-panel">
+        <div class="section-title">
+          <h2>进入下一轮建议</h2>
+          <p>这里给出的不是收益承诺，而是“是否值得占用回测与工程资源”的研究准入建议。</p>
+        </div>
+        <div id="decision-output"></div>
+      </section>
+
+      <section class="panel evidence-panel">
+        <div class="section-title">
+          <h2>检索证据</h2>
+          <p>展示本次研究所参考的外部样本与可信度，便于人工复核和申请材料展示。</p>
+        </div>
+        <div id="evidence-summary"></div>
+        <div id="evidence-results" class="results-grid"></div>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="section-title">
+          <h2>最近研究归档</h2>
+          <p>每次分析都会留下可追溯记录，为后续失败归因报告和 Alpha 知识库打底。</p>
+        </div>
+        <div id="history-results" class="results-grid"></div>
+      </section>
+
+      <section class="panel scoring-panel">
+        <div class="section-title">
+          <h2>评分逻辑</h2>
+          <p>平台优先回答“值不值得做”，因此评分重点放在落地、风险与研究价值，而非样本内收益曲线。</p>
+        </div>
+        <div class="score-legend">
+          <div>
+            <strong>数学严谨性</strong>
+            <span>协整假设、价差构造和过滤条件是否自洽</span>
+          </div>
+          <div>
+            <strong>执行可达性</strong>
+            <span>手续费、延迟、滑点和交易深度是否允许真实执行</span>
+          </div>
+          <div>
+            <strong>数据可获得性</strong>
+            <span>是否能稳定获取 K 线、orderbook、资金费率与事件数据</span>
+          </div>
+          <div>
+            <strong>失效风险</strong>
+            <span>是否容易受 Rug Pull、叙事切换、流动性蒸发影响</span>
+          </div>
+          <div>
+            <strong>研究杠杆</strong>
+            <span>是否值得进入代码转化与 Walk-forward 盲测阶段</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
